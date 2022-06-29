@@ -23,7 +23,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="AQm-aM-BLk" id="xs9-FM-FZM"/>
+                                        <outlet property="delegate" destination="AQm-aM-BLk" id="NMx-ee-nJr"/>
+                                    </connections>
                                 </tableView>
+                                <connections>
+                                    <outlet property="delegate" destination="AQm-aM-BLk" id="p93-GS-A5Q"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -36,10 +43,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dataProvider" destination="AQm-aM-BLk" id="bxe-SF-Q5z"/>
                         <outlet property="tableView" destination="og7-eA-1su" id="0fe-R5-ACe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="AQm-aM-BLk" customClass="DataProvider" customModule="ToDoApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-17.39130434782609" y="95.758928571428569"/>
         </scene>
