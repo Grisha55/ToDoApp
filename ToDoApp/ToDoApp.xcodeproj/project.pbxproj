@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE5BD12C286CC62F00572617 /* TaskListVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BD12B286CC62F00572617 /* TaskListVCTests.swift */; };
+		BE5BD12E286CCA2F00572617 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BD12D286CCA2F00572617 /* DataProvider.swift */; };
 		BEF47185286C79AB00509B8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF47184286C79AB00509B8D /* AppDelegate.swift */; };
 		BEF47187286C79AB00509B8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF47186286C79AB00509B8D /* SceneDelegate.swift */; };
 		BEF47189286C79AB00509B8D /* TaskListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF47188286C79AB00509B8D /* TaskListVC.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		BE5BD12B286CC62F00572617 /* TaskListVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListVCTests.swift; sourceTree = "<group>"; };
+		BE5BD12D286CCA2F00572617 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		BEF47181286C79AB00509B8D /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF47184286C79AB00509B8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF47186286C79AB00509B8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				BEF47188286C79AB00509B8D /* TaskListVC.swift */,
+				BE5BD12D286CCA2F00572617 /* DataProvider.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				BEF471C5286C871B00509B8D /* TaskManager.swift in Sources */,
 				BEF471BB286C7B0400509B8D /* Task.swift in Sources */,
 				BEF47189286C79AB00509B8D /* TaskListVC.swift in Sources */,
+				BE5BD12E286CCA2F00572617 /* DataProvider.swift in Sources */,
 				BEF471BD286C7F4500509B8D /* Location.swift in Sources */,
 				BEF47185286C79AB00509B8D /* AppDelegate.swift in Sources */,
 				BEF47187286C79AB00509B8D /* SceneDelegate.swift in Sources */,
