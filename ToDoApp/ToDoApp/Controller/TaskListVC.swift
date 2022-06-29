@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TaskListVC.swift
 //  ToDoApp
 //
 //  Created by Григорий Виняр on 29/06/2022.
@@ -7,13 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TaskListVC: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
     }
-
 
 }
 

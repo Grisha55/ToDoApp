@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE5BD12C286CC62F00572617 /* TaskListVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BD12B286CC62F00572617 /* TaskListVCTests.swift */; };
 		BEF47185286C79AB00509B8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF47184286C79AB00509B8D /* AppDelegate.swift */; };
 		BEF47187286C79AB00509B8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF47186286C79AB00509B8D /* SceneDelegate.swift */; };
-		BEF47189286C79AB00509B8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF47188286C79AB00509B8D /* ViewController.swift */; };
+		BEF47189286C79AB00509B8D /* TaskListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF47188286C79AB00509B8D /* TaskListVC.swift */; };
 		BEF4718C286C79AB00509B8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF4718A286C79AB00509B8D /* Main.storyboard */; };
 		BEF4718E286C79AF00509B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF4718D286C79AF00509B8D /* Assets.xcassets */; };
 		BEF47191286C79AF00509B8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF4718F286C79AF00509B8D /* LaunchScreen.storyboard */; };
@@ -42,10 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE5BD12B286CC62F00572617 /* TaskListVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListVCTests.swift; sourceTree = "<group>"; };
 		BEF47181286C79AB00509B8D /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF47184286C79AB00509B8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF47186286C79AB00509B8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BEF47188286C79AB00509B8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BEF47188286C79AB00509B8D /* TaskListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListVC.swift; sourceTree = "<group>"; };
 		BEF4718B286C79AB00509B8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEF4718D286C79AF00509B8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEF47190286C79AF00509B8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE5BD128286CC5F200572617 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BE5BD12B286CC62F00572617 /* TaskListVCTests.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		BEF47178286C79AB00509B8D = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 		BEF4719A286C79B000509B8D /* ToDoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				BE5BD128286CC5F200572617 /* Controller */,
 				BEF471C0286C86B800509B8D /* Manager */,
 				BEF4719B286C79B000509B8D /* ToDoAppTests.swift */,
 				BEF471B9286C7A8D00509B8D /* Model */,
@@ -163,7 +174,7 @@
 		BEF471B6286C79D300509B8D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BEF47188286C79AB00509B8D /* ViewController.swift */,
+				BEF47188286C79AB00509B8D /* TaskListVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -326,7 +337,7 @@
 			files = (
 				BEF471C5286C871B00509B8D /* TaskManager.swift in Sources */,
 				BEF471BB286C7B0400509B8D /* Task.swift in Sources */,
-				BEF47189286C79AB00509B8D /* ViewController.swift in Sources */,
+				BEF47189286C79AB00509B8D /* TaskListVC.swift in Sources */,
 				BEF471BD286C7F4500509B8D /* Location.swift in Sources */,
 				BEF47185286C79AB00509B8D /* AppDelegate.swift in Sources */,
 				BEF47187286C79AB00509B8D /* SceneDelegate.swift in Sources */,
@@ -337,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5BD12C286CC62F00572617 /* TaskListVCTests.swift in Sources */,
 				BEF471B8286C7A8400509B8D /* TaskTests.swift in Sources */,
 				BEF471BF286C803C00509B8D /* LocationTests.swift in Sources */,
 				BEF471C2286C86C800509B8D /* TaskManagerTests.swift in Sources */,
