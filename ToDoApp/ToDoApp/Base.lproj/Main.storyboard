@@ -11,7 +11,7 @@
         <!--Task ListVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="TaskListVC" id="BYZ-38-t0r" customClass="TaskListVC" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TaskListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TaskListVC" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,26 +19,56 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Y3W-Nk-9St">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="og7-eA-1su">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <prototypes>
-                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TaskCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="I5o-IE-Pvb" customClass="TaskCell" customModule="ToDoApp" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TaskCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" id="cvq-d4-puy" customClass="TaskCell" customModule="ToDoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cvq-d4-puy" id="IL9-cs-ysg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I5o-IE-Pvb" id="Zb4-3g-Mha">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                            </tableViewCellContentView>
-                                        </tableViewCell>
-                                    </prototypes>
-                                    <connections>
-                                        <outlet property="dataSource" destination="AQm-aM-BLk" id="xs9-FM-FZM"/>
-                                        <outlet property="delegate" destination="AQm-aM-BLk" id="NMx-ee-nJr"/>
-                                    </connections>
-                                </tableView>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6D0-MO-nwd">
+                                                    <rect key="frame" x="31" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZ9-Aa-wGW">
+                                                    <rect key="frame" x="129" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRN-Tq-mDM">
+                                                    <rect key="frame" x="221" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TZ9-Aa-wGW" firstAttribute="leading" secondItem="IL9-cs-ysg" secondAttribute="leading" constant="129" id="8ri-B3-5GO"/>
+                                                <constraint firstItem="TZ9-Aa-wGW" firstAttribute="baseline" secondItem="YRN-Tq-mDM" secondAttribute="baseline" id="G2z-hc-iSg"/>
+                                                <constraint firstItem="TZ9-Aa-wGW" firstAttribute="firstBaseline" secondItem="6D0-MO-nwd" secondAttribute="firstBaseline" id="GtR-Op-4Am"/>
+                                                <constraint firstItem="YRN-Tq-mDM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TZ9-Aa-wGW" secondAttribute="trailing" constant="8" symbolic="YES" id="UkH-xj-8lV"/>
+                                                <constraint firstItem="TZ9-Aa-wGW" firstAttribute="centerY" secondItem="6D0-MO-nwd" secondAttribute="centerY" id="cOb-Ot-Hmo"/>
+                                                <constraint firstItem="TZ9-Aa-wGW" firstAttribute="top" secondItem="IL9-cs-ysg" secondAttribute="topMargin" id="eej-IZ-aGU"/>
+                                                <constraint firstItem="TZ9-Aa-wGW" firstAttribute="firstBaseline" secondItem="YRN-Tq-mDM" secondAttribute="firstBaseline" id="hxy-v0-eBT"/>
+                                                <constraint firstItem="6D0-MO-nwd" firstAttribute="leading" secondItem="IL9-cs-ysg" secondAttribute="leading" constant="31" id="ibd-O3-JBV"/>
+                                                <constraint firstItem="TZ9-Aa-wGW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6D0-MO-nwd" secondAttribute="trailing" constant="8" symbolic="YES" id="ljb-gs-8jo"/>
+                                                <constraint firstAttribute="trailing" secondItem="YRN-Tq-mDM" secondAttribute="trailing" constant="151" id="lk5-5c-rS3"/>
+                                                <constraint firstItem="TZ9-Aa-wGW" firstAttribute="centerY" secondItem="IL9-cs-ysg" secondAttribute="centerY" id="srO-5b-64W"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="YRN-Tq-mDM" id="hhP-Lf-aIn"/>
+                                            <outlet property="locationLabel" destination="TZ9-Aa-wGW" id="oED-Bv-IFD"/>
+                                            <outlet property="titleLabel" destination="6D0-MO-nwd" id="HNA-lL-mpx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
+                                    <outlet property="dataSource" destination="AQm-aM-BLk" id="iJX-CX-aRQ"/>
                                     <outlet property="delegate" destination="AQm-aM-BLk" id="p93-GS-A5Q"/>
                                 </connections>
                             </tableView>
@@ -54,13 +84,13 @@
                     </view>
                     <connections>
                         <outlet property="dataProvider" destination="AQm-aM-BLk" id="bxe-SF-Q5z"/>
-                        <outlet property="tableView" destination="og7-eA-1su" id="0fe-R5-ACe"/>
+                        <outlet property="tableView" destination="Y3W-Nk-9St" id="gAL-st-9u0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="AQm-aM-BLk" customClass="DataProvider" customModule="ToDoApp" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="-17.39130434782609" y="95.758928571428569"/>
+            <point key="canvasLocation" x="-483" y="-47"/>
         </scene>
     </scenes>
     <resources>

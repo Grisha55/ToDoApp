@@ -11,6 +11,7 @@
 		BE5BD12E286CCA2F00572617 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BD12D286CCA2F00572617 /* DataProvider.swift */; };
 		BE5BD130286CCE3100572617 /* DataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BD12F286CCE3100572617 /* DataProviderTests.swift */; };
 		BE5BD132286CD44E00572617 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BD131286CD44E00572617 /* TaskCell.swift */; };
+		BE5BD135286DB42100572617 /* TaskCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BD134286DB42100572617 /* TaskCellTests.swift */; };
 		BEF47185286C79AB00509B8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF47184286C79AB00509B8D /* AppDelegate.swift */; };
 		BEF47187286C79AB00509B8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF47186286C79AB00509B8D /* SceneDelegate.swift */; };
 		BEF47189286C79AB00509B8D /* TaskListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF47188286C79AB00509B8D /* TaskListVC.swift */; };
@@ -50,6 +51,7 @@
 		BE5BD12D286CCA2F00572617 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		BE5BD12F286CCE3100572617 /* DataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTests.swift; sourceTree = "<group>"; };
 		BE5BD131286CD44E00572617 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		BE5BD134286DB42100572617 /* TaskCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellTests.swift; sourceTree = "<group>"; };
 		BEF47181286C79AB00509B8D /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF47184286C79AB00509B8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF47186286C79AB00509B8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		BE5BD133286DB40D00572617 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BE5BD134286DB42100572617 /* TaskCellTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BEF47178286C79AB00509B8D = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 		BEF4719A286C79B000509B8D /* ToDoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				BE5BD133286DB40D00572617 /* View */,
 				BE5BD128286CC5F200572617 /* Controller */,
 				BEF471C0286C86B800509B8D /* Manager */,
 				BEF4719B286C79B000509B8D /* ToDoAppTests.swift */,
@@ -361,6 +372,7 @@
 			files = (
 				BE5BD12C286CC62F00572617 /* TaskListVCTests.swift in Sources */,
 				BEF471B8286C7A8400509B8D /* TaskTests.swift in Sources */,
+				BE5BD135286DB42100572617 /* TaskCellTests.swift in Sources */,
 				BE5BD130286CCE3100572617 /* DataProviderTests.swift in Sources */,
 				BEF471BF286C803C00509B8D /* LocationTests.swift in Sources */,
 				BEF471C2286C86C800509B8D /* TaskManagerTests.swift in Sources */,
