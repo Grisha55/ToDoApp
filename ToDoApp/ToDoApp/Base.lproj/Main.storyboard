@@ -23,6 +23,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <prototypes>
+                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TaskCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="I5o-IE-Pvb" customClass="TaskCell" customModule="ToDoApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I5o-IE-Pvb" id="Zb4-3g-Mha">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </tableViewCellContentView>
+                                        </tableViewCell>
+                                    </prototypes>
                                     <connections>
                                         <outlet property="dataSource" destination="AQm-aM-BLk" id="xs9-FM-FZM"/>
                                         <outlet property="delegate" destination="AQm-aM-BLk" id="NMx-ee-nJr"/>
