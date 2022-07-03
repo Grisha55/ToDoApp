@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE480DD92871C47C00C402A1 /* DetailVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE480DD82871C47C00C402A1 /* DetailVCTests.swift */; };
+		BE480DDB2871C4EA00C402A1 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE480DDA2871C4EA00C402A1 /* DetailVC.swift */; };
 		BE5BD12C286CC62F00572617 /* TaskListVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BD12B286CC62F00572617 /* TaskListVCTests.swift */; };
 		BE5BD12E286CCA2F00572617 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BD12D286CCA2F00572617 /* DataProvider.swift */; };
 		BE5BD130286CCE3100572617 /* DataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BD12F286CCE3100572617 /* DataProviderTests.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE480DD82871C47C00C402A1 /* DetailVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCTests.swift; sourceTree = "<group>"; };
+		BE480DDA2871C4EA00C402A1 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		BE5BD12B286CC62F00572617 /* TaskListVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListVCTests.swift; sourceTree = "<group>"; };
 		BE5BD12D286CCA2F00572617 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		BE5BD12F286CCE3100572617 /* DataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTests.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			children = (
 				BE5BD12B286CC62F00572617 /* TaskListVCTests.swift */,
 				BE5BD12F286CCE3100572617 /* DataProviderTests.swift */,
+				BE480DD82871C47C00C402A1 /* DetailVCTests.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			children = (
 				BEF47188286C79AB00509B8D /* TaskListVC.swift */,
 				BE5BD12D286CCA2F00572617 /* DataProvider.swift */,
+				BE480DDA2871C4EA00C402A1 /* DetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 				BEF47189286C79AB00509B8D /* TaskListVC.swift in Sources */,
 				BE5BD12E286CCA2F00572617 /* DataProvider.swift in Sources */,
 				BE5BD132286CD44E00572617 /* TaskCell.swift in Sources */,
+				BE480DDB2871C4EA00C402A1 /* DetailVC.swift in Sources */,
 				BEF471BD286C7F4500509B8D /* Location.swift in Sources */,
 				BEF47185286C79AB00509B8D /* AppDelegate.swift in Sources */,
 				BEF47187286C79AB00509B8D /* SceneDelegate.swift in Sources */,
@@ -375,6 +382,7 @@
 				BE5BD135286DB42100572617 /* TaskCellTests.swift in Sources */,
 				BE5BD130286CCE3100572617 /* DataProviderTests.swift in Sources */,
 				BEF471BF286C803C00509B8D /* LocationTests.swift in Sources */,
+				BE480DD92871C47C00C402A1 /* DetailVCTests.swift in Sources */,
 				BEF471C2286C86C800509B8D /* TaskManagerTests.swift in Sources */,
 				BEF4719C286C79B000509B8D /* ToDoAppTests.swift in Sources */,
 			);
