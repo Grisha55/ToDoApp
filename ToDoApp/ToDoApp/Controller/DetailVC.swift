@@ -14,11 +14,16 @@ class DetailVC: UIViewController {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var locationLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    var task: Task!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.titleLabel.text = task.title
+        self.descriptionLabel.text = task.description
+        self.locationLabel.text = task.location?.name
     }
     
     
