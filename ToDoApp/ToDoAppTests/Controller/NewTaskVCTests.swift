@@ -7,10 +7,12 @@
 
 import XCTest
 @testable import ToDoApp
+import CoreLocation
 
 class NewTaskVCTests: XCTestCase {
 
     var sut: NewTaskVC!
+    var placemark: MockClPlacemark!
     
     override func setUpWithError() throws {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -34,8 +36,8 @@ class NewTaskVCTests: XCTestCase {
         XCTAssertTrue(sut.dateTF.isDescendant(of: sut.view))
     }
     
-    func testHasAdressTF() {
-        XCTAssertTrue(sut.adressTF.isDescendant(of: sut.view))
+    func testHasAddressTF() {
+        XCTAssertTrue(sut.addressTF.isDescendant(of: sut.view))
     }
     
     func testHasSaveButton() {
@@ -44,5 +46,73 @@ class NewTaskVCTests: XCTestCase {
     
     func testHasCancelButton() {
         XCTAssertTrue(sut.cancelButton.isDescendant(of: sut.view))
+    }
+    
+    func testHasDescriptionTF() {
+        XCTAssertTrue(sut.descriptionTF.isDescendant(of: sut.view))
+    }
+    
+    func testSaveUsesGeocoderToConvertCoordinateFromAddress() {
+        let df = DateFormatter()
+        df.dateFormat = "dd.MM.yy"
+        let date = df.date(from: "01.01.19")
+        
+        sut.titleTF.text = "Foo"
+        sut.locationTF.text = "Bar"
+        sut.dateTF.text = "01.01.19"
+        sut.addressTF.text = "Ярославль"
+        sut.descriptionTF.text = "Baz"
+        sut.taskManager = TaskManager()
+        
+        let mockGeocoder = MockCLGeocoder()
+        sut.geocoder = mockGeocoder
+        
+        sut.save()
+        
+        
+        let coordinate = CLLocationCoordinate2D(latitude: 57.6255756, longitude: 39.8913949)
+        let location = Location(name: "Bar", coordinate: coordinate)
+        
+        let generatedTask = Task(title: "Foo", description: "Baz", location: location, date: date)
+        
+        placemark = MockClPlacemark()
+        placemark.mockCoordinate = coordinate
+        mockGeocoder.completionHandler?([placemark], nil)
+        
+        let task = sut.taskManager?.task(at: 0)
+        
+        XCTAssertEqual(task, generatedTask)
+    }
+    
+    func testSaveButtonHasSaveMethod() {
+        let saveButton = sut.saveButton
+        
+        guard let actions = saveButton?.actions(forTarget: sut, forControlEvent: .touchUpInside) else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssertTrue(actions.contains("save"))
+    }
+}
+
+extension NewTaskVCTests {
+    
+    class MockCLGeocoder: CLGeocoder {
+        
+        var completionHandler: CLGeocodeCompletionHandler?
+        
+        override func geocodeAddressString(_ addressString: String, completionHandler: @escaping CLGeocodeCompletionHandler) {
+            self.completionHandler = completionHandler
+        }
+    }
+    
+    class MockClPlacemark: CLPlacemark {
+        
+        var mockCoordinate: CLLocationCoordinate2D!
+        
+        override var location: CLLocation? {
+            return CLLocation(latitude: mockCoordinate.latitude, longitude: mockCoordinate.longitude)
+        }
     }
 }
