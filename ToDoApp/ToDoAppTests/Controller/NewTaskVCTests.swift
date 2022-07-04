@@ -15,13 +15,18 @@ class NewTaskVCTests: XCTestCase {
     var placemark: MockClPlacemark!
     
     override func setUpWithError() throws {
+        try super.tearDownWithError()
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(withIdentifier: String(describing: NewTaskVC.self)) as? NewTaskVC
         sut.loadViewIfNeeded()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        placemark = nil
+        
+        try super.tearDownWithError()
     }
 
     func testHasTitleTF() {
@@ -136,7 +141,9 @@ class NewTaskVCTests: XCTestCase {
         mockNewTaskVC.save()
         
         // Then
-        XCTAssertTrue(mockNewTaskVC.isDismissed)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            XCTAssertTrue(mockNewTaskVC.isDismissed)
+        }
     }
 }
 

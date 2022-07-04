@@ -27,5 +27,10 @@ class TaskListVC: UIViewController {
         taskManager.add(task: Task(title: "Test task"))
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
 }
 

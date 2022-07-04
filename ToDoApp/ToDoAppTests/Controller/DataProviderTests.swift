@@ -16,6 +16,8 @@ class DataProviderTests: XCTestCase {
     var controller: TaskListVC!
     
     override func setUpWithError() throws {
+        try super.setUpWithError()
+        
         sut = DataProvider()
         sut.taskManager = TaskManager()
         
@@ -33,6 +35,8 @@ class DataProviderTests: XCTestCase {
         controller = nil
         sut = nil
         tableView = nil
+        
+        try super.tearDownWithError()
     }
 
     func testNumberOfSectionsIsTwo() {
