@@ -53,9 +53,13 @@ class TaskManager {
             return
         }
         
-        let plistData = try? PropertyListSerialization.data(fromPropertyList: tasksDicts, format: .xml, options: (0))
+        guard let plistData = try? PropertyListSerialization.data(fromPropertyList: tasksDicts, format: .xml, options: (0)) else { return }
         
-        try? plistData?.write(to: tasksURL, options: .atomic)
+        do {
+            try plistData.write(to: tasksURL, options: .atomic)
+        } catch {
+            print(error)
+        }
     }
     
     func add(task: Task) {
@@ -69,12 +73,14 @@ class TaskManager {
     }
     
     func checkTask(at index: Int) {
-        let task = tasks.remove(at: index)
+        var task = tasks.remove(at: index)
+        task.isDone.toggle()
         doneTasks.append(task)
     }
     
     func uncheckTask(at index: Int) {
-        let task = doneTasks.remove(at: index)
+        var task = doneTasks.remove(at: index)
+        task.isDone.toggle()
         tasks.append(task)
     }
     

@@ -47,7 +47,7 @@ extension DataProvider: UITableViewDelegate, UITableViewDataSource {
         case .done: task = taskManager.doneTask(at: indexPath.row)
         }
         
-        cell.configure(withTask: task)
+        cell.configure(withTask: task, done: task.isDone)
         
         return cell
     }
@@ -78,8 +78,8 @@ extension DataProvider: UITableViewDelegate, UITableViewDataSource {
         
         switch section {
         case .todo:
-            let task = taskManager?.task(at: indexPath.row)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DidSelectRow notification"), object: self, userInfo: ["task" : task ?? Task(title: "Foo")])
+            guard let task = taskManager?.task(at: indexPath.row) else { return }
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DidSelectRow notification"), object: self, userInfo: ["task" : task])
         case .done: break
         }
     }
