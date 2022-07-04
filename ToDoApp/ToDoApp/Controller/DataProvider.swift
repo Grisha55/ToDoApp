@@ -20,7 +20,7 @@ class DataProvider: NSObject {
 extension DataProvider: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let section = Section(rawValue: section) else { return 0 }
+        guard let section = Section(rawValue: section) else { fatalError() }
         guard let taskManager = taskManager else { return 0 }
         switch section {
         case .todo: return taskManager.tasksCount
@@ -47,7 +47,7 @@ extension DataProvider: UITableViewDelegate, UITableViewDataSource {
         case .done: task = taskManager.doneTask(at: indexPath.row)
         }
         
-        cell.configure(withTask: task)
+        cell.configure(withTask: task, done: task.isDone)
         
         return cell
     }
@@ -73,4 +73,18 @@ extension DataProvider: UITableViewDelegate, UITableViewDataSource {
         tableView.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let section = Section(rawValue: indexPath.section) else { fatalError() }
+        
+        switch section {
+        case .todo:
+            guard let task = taskManager?.task(at: indexPath.row) else { return }
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DidSelectRow notification"), object: self, userInfo: ["task" : task])
+        case .done: break
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Section: \(section)"
+    }
 }
