@@ -46,6 +46,10 @@ class NewTaskVC: UIViewController {
         }
     }
     
+    @IBAction func cancel() {
+        dismiss(animated: true)
+    }
+    
     var dateFormatter: DateFormatter {
         let df = DateFormatter()
         df.dateFormat = "dd.MM.yy"
