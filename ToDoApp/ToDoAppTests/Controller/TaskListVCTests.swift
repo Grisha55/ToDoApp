@@ -11,12 +11,13 @@ import XCTest
 class TaskListVCTests: XCTestCase {
     
     var sut: TaskListVC!
+    var newTaskVC: NewTaskVC!
     
     override func setUpWithError() throws {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: String(describing: TaskListVC.self))
         sut = vc as? TaskListVC
-        
+        newTaskVC = sut.presentedViewController as? NewTaskVC
         sut?.loadViewIfNeeded()
     }
     
@@ -49,23 +50,30 @@ class TaskListVCTests: XCTestCase {
         XCTAssertEqual(target as? TaskListVC, sut)
     }
     
-    func testAddNewTaskPresentsNewTaskVC() {
-        XCTAssertNil(sut.presentedViewController)
+    func presentingNewTaskViewController() -> NewTaskVC {
         
         guard let newTaskButton = sut.navigationItem.rightBarButtonItem, let action = newTaskButton.action else {
-            XCTFail()
-            return
+            return NewTaskVC()
         }
         
         UIApplication.shared.keyWindow?.rootViewController = sut
         
         sut.performSelector(onMainThread: action, with: newTaskButton, waitUntilDone: true)
         
-        XCTAssertNotNil(sut.presentedViewController)
-        XCTAssertTrue(sut.presentedViewController is NewTaskVC)
-        
         let newTaskVC = sut.presentedViewController as! NewTaskVC
+        return newTaskVC
+    }
+    
+    func testAddNewTaskPresentsNewTaskVC() {
+        let newTaskVC = presentingNewTaskViewController()
         XCTAssertNotNil(newTaskVC.titleTF)
     }
+    
+    func testSharesSameTaskManagerWithNewTaskVC() {
+        let newTaskVC = presentingNewTaskViewController()
+        XCTAssertTrue(newTaskVC.taskManager === sut.dataProvider.taskManager)
+    }
+    
+    // MARK: - отрефакторить два последних теста и сделать коммит
     
 }
