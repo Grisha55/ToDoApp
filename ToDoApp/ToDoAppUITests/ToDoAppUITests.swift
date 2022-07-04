@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import ToDoApp
 
 class ToDoAppUITests: XCTestCase {
 
@@ -23,11 +24,42 @@ class ToDoAppUITests: XCTestCase {
     }
 
     func testExample() throws {
-        // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let addButton = app.buttons["Add"]
+        XCTAssertTrue(addButton.exists)
+        addButton.tap()
+        
+        let titleTF = app.textFields["Title"]
+        XCTAssertTrue(titleTF.exists)
+        titleTF.tap()
+        titleTF.typeText("Foo")
+        
+        let locationTF = app.textFields["Location"]
+        XCTAssertTrue(locationTF.exists)
+        locationTF.tap()
+        locationTF.typeText("Bar")
+        
+        let dateTF = app.textFields["Date"]
+        XCTAssertTrue(dateTF.exists)
+        dateTF.tap()
+        dateTF.typeText("Buz")
+        
+        let addressTF = app.textFields["Address"]
+        XCTAssertTrue(addressTF.exists)
+        addressTF.tap()
+        addressTF.typeText("Yaroslavl")
+        
+        let descriptionTF = app.textFields["Description"]
+        XCTAssertTrue(descriptionTF.exists)
+        descriptionTF.tap()
+        descriptionTF.typeText("Desc")
+        
+        let saveButton = app.buttons["Сохранить"]
+        XCTAssertTrue(saveButton.exists)
+        saveButton.tap()
+        
     }
 
     func testLaunchPerformance() throws {
