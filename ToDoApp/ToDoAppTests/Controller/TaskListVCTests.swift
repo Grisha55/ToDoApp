@@ -74,6 +74,4 @@ class TaskListVCTests: XCTestCase {
         XCTAssertTrue(newTaskVC.taskManager === sut.dataProvider.taskManager)
     }
     
-    // MARK: - отрефакторить два последних теста и сделать коммит
-    
 }
