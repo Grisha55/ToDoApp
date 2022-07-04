@@ -30,8 +30,22 @@ class APIClient {
             fatalError()
         }
         
-        urlSession.dataTask(with: url) { data, respone, error in
+        urlSession.dataTask(with: url) { (data, respone, error) in
             
+            guard let data = data else { fatalError() }
+            do {
+                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : String] else { return }
+                
+                let token = dictionary["token"]
+                DispatchQueue.main.async {
+                    completionHandler(token, nil)
+                }
+                
+            } catch {
+                print(error)
+                completionHandler(nil, error)
+            }
+
         }.resume()
     }
 }
