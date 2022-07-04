@@ -14,6 +14,8 @@ class TaskListVCTests: XCTestCase {
     var newTaskVC: NewTaskVC!
     
     override func setUpWithError() throws {
+        try super.setUpWithError()
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: String(describing: TaskListVC.self))
         sut = vc as? TaskListVC
@@ -23,6 +25,9 @@ class TaskListVCTests: XCTestCase {
     
     override func tearDownWithError() throws {
         sut = nil
+        newTaskVC = nil
+        
+        try super.tearDownWithError()
     }
     
     func testWhenViewIsLoadedTableViewNotNil() {
@@ -74,4 +79,24 @@ class TaskListVCTests: XCTestCase {
         XCTAssertTrue(newTaskVC.taskManager === sut.dataProvider.taskManager)
     }
     
+    func testWhenViewAppearedTableViewReloaded() {
+        let mockTableView = MockTableView()
+        sut.tableView = mockTableView
+        
+        sut.beginAppearanceTransition(true, animated: true)
+        sut.endAppearanceTransition()
+        
+        XCTAssertTrue((sut.tableView as! MockTableView).isReloaded)
+    }
+    
+}
+
+extension TaskListVCTests {
+    
+    class MockTableView: UITableView {
+        var isReloaded = false
+        override func reloadData() {
+            isReloaded = true
+        }
+    }
 }
