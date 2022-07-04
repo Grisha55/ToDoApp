@@ -14,6 +14,7 @@ class TaskListVC: UIViewController {
     
     @IBAction func addNewTask(_ sender: Any) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: NewTaskVC.self)) as? NewTaskVC {
+            vc.taskManager = self.dataProvider.taskManager
             present(vc, animated: true, completion: nil)
         }
     }
@@ -21,7 +22,8 @@ class TaskListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let taskManager = TaskManager()
+        dataProvider.taskManager = taskManager
     }
 
 }
