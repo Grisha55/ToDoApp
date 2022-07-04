@@ -40,6 +40,7 @@ class NewTaskVC: UIViewController {
             
             self?.taskManager.add(task: task)
         }
+        dismiss(animated: true, completion: nil)
     }
     
     var dateFormatter: DateFormatter {

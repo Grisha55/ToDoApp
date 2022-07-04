@@ -24,6 +24,7 @@ class TaskListVC: UIViewController {
         
         let taskManager = TaskManager()
         dataProvider.taskManager = taskManager
+        taskManager.add(task: Task(title: "Test task"))
     }
 
 }

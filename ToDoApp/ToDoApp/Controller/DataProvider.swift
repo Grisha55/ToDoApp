@@ -20,7 +20,7 @@ class DataProvider: NSObject {
 extension DataProvider: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let section = Section(rawValue: section) else { return 0 }
+        guard let section = Section(rawValue: section) else { fatalError() }
         guard let taskManager = taskManager else { return 0 }
         switch section {
         case .todo: return taskManager.tasksCount

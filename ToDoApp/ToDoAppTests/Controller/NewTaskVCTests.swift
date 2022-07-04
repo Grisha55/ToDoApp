@@ -114,6 +114,30 @@ class NewTaskVCTests: XCTestCase {
         }
         waitForExpectations(timeout: 5, handler: nil)
     }
+    
+    func testSaveDismissNewTaskVC() {
+        let mockNewTaskVC = MockNewTaskVC()
+        mockNewTaskVC.titleTF = UITextField()
+        mockNewTaskVC.titleTF.text = "Foo"
+        
+        mockNewTaskVC.descriptionTF = UITextField()
+        mockNewTaskVC.descriptionTF.text = "Bar"
+        
+        mockNewTaskVC.locationTF = UITextField()
+        mockNewTaskVC.locationTF.text = "Baz"
+        
+        mockNewTaskVC.addressTF = UITextField()
+        mockNewTaskVC.addressTF.text = "Ярославль"
+        
+        mockNewTaskVC.dateTF = UITextField()
+        mockNewTaskVC.dateTF.text = "04.07.22"
+        
+        // When
+        mockNewTaskVC.save()
+        
+        // Then
+        XCTAssertTrue(mockNewTaskVC.isDismissed)
+    }
 }
 
 extension NewTaskVCTests {
@@ -133,6 +157,17 @@ extension NewTaskVCTests {
         
         override var location: CLLocation? {
             return CLLocation(latitude: mockCoordinate.latitude, longitude: mockCoordinate.longitude)
+        }
+    }
+}
+
+extension NewTaskVCTests {
+    
+    class MockNewTaskVC: NewTaskVC {
+        var isDismissed = false
+        
+        override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+            isDismissed = true
         }
     }
 }
